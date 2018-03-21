@@ -1,0 +1,9 @@
+---
+# defaults file for add_nginx_proxy_conf
+
+domain:
+
+binded_port:
+
+ssl_certificate: "/etc/letsencrypt/live/{{ domain }}/fullchain.pem"
+ssl_certificate_key: "/etc/letsencrypt/live/{{ domain }}/privkey.pem"
