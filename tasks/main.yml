@@ -1,16 +1,8 @@
 ---
 # tasks file for add_nginx_proxy_conf
 
-- name: create vhost configuration file
+- name: Create vhost configuration file
   template:
     src: proxy_template.conf.j2
     dest: "/etc/nginx/sites-available/{{ domain }}.conf"
-
-- name: enable vhost
-  file:
-    src: "/etc/nginx/sites-available/{{ domain }}.conf"
-    dest: "/etc/nginx/sites-enabled/{{ domain }}.conf"
-    owner: www-data
-    group: www-data
-    state: link
-  notify: restart nginx
+  notify: Enable vhost
