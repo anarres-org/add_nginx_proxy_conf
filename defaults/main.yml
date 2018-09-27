@@ -7,3 +7,8 @@ binded_port:
 
 ssl_certificate: "/etc/letsencrypt/live/{{ domain }}/fullchain.pem"
 ssl_certificate_key: "/etc/letsencrypt/live/{{ domain }}/privkey.pem"
+
+proxy_conf: |
+  proxy_pass http://127.0.0.1:{{ binded_port }};
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
