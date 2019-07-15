@@ -4,6 +4,7 @@
 domain:
 
 binded_port:
+external_port: 443
 
 ssl_certificate: "/etc/letsencrypt/live/{{ domain }}/fullchain.pem"
 ssl_certificate_key: "/etc/letsencrypt/live/{{ domain }}/privkey.pem"

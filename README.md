@@ -16,6 +16,8 @@ Role Variables
 * `domain`: domain (or subdomain) for the reverse proxy to bind to.
 * `binded_port`: Internal binded port of the service we want the proxy to reach
 .
+* `external_port`: External binded port through which the proxy will be
+  accessible (with SSL/TLS).
 * `ssl_certificate`: Path to the SSL cert file.
 * `ssl_certificate_key`: Path to the SSL private key file.
 
@@ -37,7 +39,7 @@ Example Playbook
     - role: add_nginx_proxy_conf
 ```
 
-**Note**: by default this role will use the SSL cert files found in */etc/letsencrypt/live/{{ domain }}/*.                             
+**Note**: by default this role will use the SSL cert files found in */etc/letsencrypt/live/{{ domain }}/*.
 
 Testing
 -------
