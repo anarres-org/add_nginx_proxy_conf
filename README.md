@@ -20,6 +20,7 @@ Role Variables
   accessible (with SSL/TLS).
 * `ssl_certificate`: Path to the SSL cert file.
 * `ssl_certificate_key`: Path to the SSL private key file.
+* `template_path`: Path to the template for the nginx vhost configuration.
 
 Dependencies
 ------------

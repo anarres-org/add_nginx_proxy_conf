@@ -3,6 +3,6 @@
 
 - name: Create vhost configuration file
   template:
-    src: proxy_template.conf.j2
+    src: "{{ template_path }}"
     dest: "/etc/nginx/sites-available/{{ domain }}.conf"
   notify: Enable vhost

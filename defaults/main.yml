@@ -9,6 +9,8 @@ external_port: 443
 ssl_certificate: "/etc/letsencrypt/live/{{ domain }}/fullchain.pem"
 ssl_certificate_key: "/etc/letsencrypt/live/{{ domain }}/privkey.pem"
 
+template_path: proxy_template.conf.j2
+
 proxy_conf: |
   proxy_pass http://127.0.0.1:{{ binded_port }};
   proxy_set_header Host $host;
