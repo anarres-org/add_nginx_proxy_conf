@@ -9,8 +9,9 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_proxy_config_file(host):
     f = host.file('/etc/nginx/sites-available/anarres.local.conf')
     assert f.exists
-    assert f.user == 'root'
-    assert f.group == 'root'
+    assert f.user == 'www-data'
+    assert f.group == 'www-data'
+    assert f.mode == 0o644
 
 
 def test_proxy_config_symlink(host):

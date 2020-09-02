@@ -5,4 +5,7 @@
   template:
     src: "{{ template_path }}"
     dest: "/etc/nginx/sites-available/{{ domain }}.conf"
+    owner: www-data
+    group: www-data
+    mode: 0644
   notify: Enable vhost
