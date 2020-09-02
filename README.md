@@ -1,34 +1,29 @@
-Add nginx proxy configuration
-=============================
+# Add nginx proxy configuration
 
 This role adds and enables a reverse proxy configuration to an existing nginx
 instance.
 
-Requirements
-------------
+## Requirements
 
-* nginx
+* `nginx`
 * An SSL cert for the domain.
 
-Role Variables
---------------
+## Role Variables
 
 * `domain`: domain (or subdomain) for the reverse proxy to bind to.
 * `binded_port`: Internal binded port of the service we want the proxy to reach
-.
+   .
 * `external_port`: External binded port through which the proxy will be
-  accessible (with SSL/TLS).
+   accessible (with SSL/TLS).
 * `ssl_certificate`: Path to the SSL cert file.
 * `ssl_certificate_key`: Path to the SSL private key file.
 * `template_path`: Path to the template for the nginx vhost configuration.
 
-Dependencies
-------------
+## Dependencies
 
 None.
 
-Example Playbook
-----------------
+## Example Playbook
 
 ```yaml
 - name: Add nginx proxy configuration
@@ -40,25 +35,22 @@ Example Playbook
     - role: add_nginx_proxy_conf
 ```
 
-**Note**: by default this role will use the SSL cert files found in */etc/letsencrypt/live/{{ domain }}/*.
+**Note**: by default this role will use the SSL cert files found in
+*/etc/letsencrypt/live/{{ domain }}/*.
 
-Testing
--------
+## Testing
 
 To test the role you need [molecule](http://molecule.readthedocs.io/en/latest/)
 and **docker**.
-
 
 ```bash
 molecule test
 ```
 
-License
--------
+## License
 
 GPLv3
 
-Author Information
-------------------
+## Author Information
 
-m0wer [ at ] autistici.org
+* m0wer: m0wer (at) autistici (dot) org
