@@ -119,7 +119,7 @@
         - http_files.stat.exists == False
 
     - name: Start simple http server in background
-      shell: cd /tmp/www; nohup python -mSimpleHTTPServer </dev/null >/dev/null 2>&1 &
+      shell: cd /tmp/www && nohup python3 -m http.server &
       when:
         - http_files.stat.exists == False
 
