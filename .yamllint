@@ -16,3 +16,4 @@ ignore: |
   roles/
   molecule/
   library/
+  .github/

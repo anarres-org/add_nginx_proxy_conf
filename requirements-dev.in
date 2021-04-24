@@ -1,0 +1,9 @@
+molecule[docker]
+docker
+testinfra
+ansible
+yamllint
+ansible-lint
+flake8
+pre-commit
+commitizen

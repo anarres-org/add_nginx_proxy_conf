@@ -1,6 +1,6 @@
 ---
 dependency:
-  enabled: no
+  enabled: false
 driver:
   name: docker
 platforms:
@@ -8,14 +8,14 @@ platforms:
     image: library/debian:buster
 lint: |
   set -e
-  yamllint .
-  ansible-lint --exclude roles/ --exclude molecule/ --exclude library/
+  yamllint -c .yamllint .
+  ansible-lint --exclude molecule/ --exclude library/ --exclude .github/
   flake8 --exclude roles,molecule,library
 provisioner:
   name: ansible
-  config_options:
-    defaults:
-      callback_whitelist: profile_tasks
+  options:
+    become: true
+    extra-vars: "{'testing': true, domain: 'anarres.local'}"
 scenario:
   name: default
 verifier:
