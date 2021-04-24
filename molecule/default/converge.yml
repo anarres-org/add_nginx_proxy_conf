@@ -1,5 +1,13 @@
 ---
 
+- name: "[Pretask] Update apt cache"
+  hosts: all
+  tasks:
+    - name: Update and upgrade apt packages
+      apt:
+        update_cache: yes
+        upgrade: yes
+
 - name: '[Pretask] Setup certificates'
   hosts: all
   vars:
