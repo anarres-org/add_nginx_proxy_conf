@@ -1,7 +1,22 @@
 .DEFAULT_GOAL := update-test
 
+.PHONY: update
+update:
+	@echo "-------------------------"
+	@echo "- Updating dependencies -"
+	@echo "-------------------------"
+
+	pip install pip-tools
+	rm requirements.txt
+	touch requirements.txt
+	pip-compile -Ur requirements.in --allow-unsafe
+
+	pip install -r requirements.txt
+
+	@echo ""
+
 .PHONY: update-test
-update-test:
+update-test: update
 	@echo "------------------------------"
 	@echo "- Updating test dependencies -"
 	@echo "------------------------------"

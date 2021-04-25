@@ -1,9 +1,9 @@
-molecule[docker]
-docker
-testinfra
-ansible
-yamllint
+-r requirements.in
 ansible-lint
-flake8
-pre-commit
 commitizen
+docker
+flake8
+molecule[docker]
+pre-commit
+testinfra
+yamllint

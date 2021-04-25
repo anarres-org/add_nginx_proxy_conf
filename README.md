@@ -7,6 +7,11 @@ instance.
 
 * `nginx`
 * An SSL cert for the domain.
+* In your local machine:
+
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 ## Role Variables
 
