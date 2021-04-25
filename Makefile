@@ -1,5 +1,11 @@
 .DEFAULT_GOAL := update-test
 
+.PHONY: install
+install:
+	python -m pip install -U setuptools pip
+	pip install -r requirements-dev.txt
+	pre-commit install
+
 .PHONY: update
 update:
 	@echo "-------------------------"
@@ -9,7 +15,7 @@ update:
 	pip install pip-tools
 	rm requirements.txt
 	touch requirements.txt
-	pip-compile -Ur requirements.in --allow-unsafe
+	pip-compile -Ur --allow-unsafe
 
 	pip install -r requirements.txt
 
