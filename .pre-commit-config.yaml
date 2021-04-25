@@ -26,6 +26,8 @@ repos:
   - repo: https://github.com/jazzband/pip-tools
     rev: 5.0.0
     hooks:
+      - name: Build requirements.txt
+        id: pip-compile
       - name: Build requirements-dev.txt
         id: pip-compile
         args: ['requirements-dev.in', '--allow-unsafe']
