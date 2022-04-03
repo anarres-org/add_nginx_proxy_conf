@@ -2,7 +2,7 @@
 # tasks file for add_nginx_proxy_conf
 
 - name: Create vhost configuration file
-  template:
+  ansible.builtin.template:
     src: "{{ template_path }}"
     dest: "/etc/nginx/sites-available/{{ domain }}.conf"
     owner: www-data

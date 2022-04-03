@@ -2,7 +2,7 @@
 # handlers file for add_nginx_proxy_conf
 
 - name: Enable vhost
-  file:
+  ansible.builtin.file:
     src: "/etc/nginx/sites-available/{{ domain }}.conf"
     dest: "/etc/nginx/sites-enabled/{{ domain }}.conf"
     owner: www-data
@@ -11,6 +11,6 @@
   notify: Restart nginx
 
 - name: Restart nginx
-  service:
+  ansible.builtin.service:
     name: nginx
     state: restarted
